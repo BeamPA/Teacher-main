@@ -50,7 +50,7 @@ const Edit = () => {
         { id: 'T13', label: 'T13', subOptions: ['1', '2', '3', '4', '4+'] },
         { id: 'T14', label: 'T14', subOptions: ['1', '2', '3', '4', '4+'] },
         { id: 'T17', label: 'T17', subOptions: ['1', '2', '3', '4', '4+'] },
-        { id: 'T18', label: 'T18', subOptions: ['1', '2', '3', '4', '4+'] },
+        { id: 'T18', label: 'T18', subOptions: ['1', '2', '3', '4', '4+'] },   
         { id: 'T19', label: 'T19', subOptions: ['1', '2', '3', '4', '4+'] },
         { id: 'T20', label: 'T20', subOptions: ['1', '2', '3', '4', '4+'] },
         { id: 'T21', label: 'T21', subOptions: ['1', '2', '3', '4', '4+'] },
@@ -58,9 +58,6 @@ const Edit = () => {
         { id: 'T23', label: 'T23', subOptions: ['1', '2', '3', '4', '4+'] },
     ];
   
-
-  
-
     const handleCountstdChange = (event) => {
         const inputValue = parseInt(event.target.value, 10);
         if (!isNaN(inputValue) && inputValue >= 0) {
@@ -119,7 +116,7 @@ const Edit = () => {
     return (
     <div>
         <div className="bg-white h-screen flex justify-between items-center p-10">
-            <div className="bg-white p-12 ml-20 rounded-md text-xl overflow-y-auto w-[1162px]">
+            <div className="bg-white p-12 ml-20 rounded-md text-xl  w-[1162px]">
             <div className="bg-white"
                 style={{
                     position: 'absolute',
@@ -230,7 +227,8 @@ const Edit = () => {
                             label="ประเภท" 
                             items={['บรรยาย', 'ปฏิบัติ']} 
                             align="left" 
-                            onSelect={handleTypeChange} />
+                            onSelect={handleTypeChange}
+                        />
                         <CenteredTextInput
                             label="จำนวนที่นั่ง"
                             value={countstd}

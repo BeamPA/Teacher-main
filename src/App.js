@@ -4,9 +4,7 @@ import Sidebar from './pages/Sidebar.js';
 import Home from './pages/Home';
 import Form from './pages/Form.js';
 import Edit from './pages/Edit.js';
-
-
-
+import User from './pages/User.js';
 
 function App() {
   return (
@@ -17,6 +15,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/form" element={<Form />} />
           <Route path="/edit" element={<Edit />} />
+          <Route path="/user" element={<User />} />
         </Routes>
       </div>
     </BrowserRouter>
