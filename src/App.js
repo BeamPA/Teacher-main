@@ -1,21 +1,23 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from './pages/Sidebar.js';
-import Home from './pages/Home';
-import Form from './pages/Form.js';
-import Edit from './pages/Edit.js';
-import User from './pages/User.js';
+import Sidebar_aj from './pages_aj/Sidebar.js';
+import Home_aj from './pages_aj/Home';
+import Form_aj from './pages_aj/Form.js';
+import Edit_aj from './pages_aj/Edit.js';
+import User_aj from './pages_aj/User.js';
+import Logout_aj from './pages_aj/logout.js'
 
 function App() {
   return (
     <BrowserRouter>
       <div className="flex">
-        <Sidebar />
+        <Sidebar_aj />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/form" element={<Form />} />
-          <Route path="/edit" element={<Edit />} />
-          <Route path="/user" element={<User />} />
+          <Route path="/" element={<Home_aj />} />
+          <Route path="/form" element={<Form_aj/>} />
+          <Route path="/edit" element={<Edit_aj/>} />
+          <Route path="/user" element={<User_aj />} />
+          <Route path='/logout' element={<Logout_aj />} />
         </Routes>
       </div>
     </BrowserRouter>

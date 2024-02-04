@@ -1,0 +1,10 @@
+.user-container {
+    background-image: url('/src/pic/eng.jpg'); /* Replace 'background.jpg' with your actual image file name */
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Center the background image */
+    color: white; /* Set text color to white or any other contrasting color */
+    width: 1300px;
+    height: 735px;
+     /* Add padding to the container if necessary */
+    text-align: center; /* Center the text */
+  }
