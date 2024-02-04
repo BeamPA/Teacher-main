@@ -40,7 +40,7 @@ const Form = () => {
               <th className="border border-black p-2 w-44">รหัสวิชา</th>
               <th className="border border-black p-2 w-96">ชื่อวิชา</th>
               <th className="border border-black p-2 text-center">หน่วยกิต</th>
-              <th className="border border-black p-2 text-center">+</th>
+              <th className="border border-black p-2 text-center">เพิ่มรายวิชา</th>
             </tr>
           </thead>
           <tbody>
@@ -50,8 +50,8 @@ const Form = () => {
                 <td className="border border-black p-2">{row.subjectCode}</td>
                 <td className="border border-black p-2">{row.subjectName}</td>
                 <td className="border border-black p-2">{row.credit}</td>
-                <td className="border border-black p-2">
-                  <Link to={`/edit?${searchQuery}`} className="text-red-900">
+                <td className="border border-black p-2 ">
+                  <Link to={`/edit?${searchQuery}`} className="text-red-900 flex items-center justify-center">
                     <FiPlusCircle />
                   </Link>
                 </td>
