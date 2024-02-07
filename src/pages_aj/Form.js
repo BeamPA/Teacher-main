@@ -1,20 +1,25 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FiPlusCircle } from "react-icons/fi";
 
 const Form = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [tableData, setTableData] = useState([])
 
-  const tableData = [
+  /* const tableData = [
     { order: 1, subjectCode: '03603212-65', subjectName: 'Abstract Data Types and Problem Solving', credit: 3 },
     { order: 2, subjectCode: '03603213-65', subjectName: 'Algorithm Design and Analysis', credit: 3 },
     // Add more rows as needed
-  ];
+  ]; */
+  useEffect(() => {
+    (async function () {
+      const res = await fetch("http://localhost:4000/course/getAllCourses")
+      const data = await res.json()
+      setTableData(data)
+    })()
+  }, [])
 
-  const filteredTableData = tableData.filter((row) =>
-    row.subjectCode.toLowerCase().includes(searchQuery.trim().toLowerCase()) ||
-    row.subjectName.toLowerCase().includes(searchQuery.trim().toLowerCase())
-  );
+
 
   return (
     <div className="bg-white h-screen w-screen items-center justify-center">
@@ -38,25 +43,34 @@ const Form = () => {
             <tr>
               <th className="border border-black p-2">ลำดับ</th>
               <th className="border border-black p-2 w-44">รหัสวิชา</th>
-              <th className="border border-black p-2 w-96">ชื่อวิชา</th>
+              <th className="border border-black p-2 w-96">ชื่อวิชาภาษาอังกฤษ</th>
+              <th className="border border-black p-2 w-96">ชื่อวิชาภาษาไทย</th>
               <th className="border border-black p-2 text-center">หน่วยกิต</th>
               <th className="border border-black p-2 text-center">เพิ่มรายวิชา</th>
             </tr>
           </thead>
           <tbody>
-            {filteredTableData.map((row) => (
-              <tr key={row.subjectCode}>
-                <td className="border border-black p-2">{row.order}</td>
-                <td className="border border-black p-2">{row.subjectCode}</td>
-                <td className="border border-black p-2">{row.subjectName}</td>
-                <td className="border border-black p-2">{row.credit}</td>
-                <td className="border border-black p-2 ">
-                  <Link to={`/edit?${searchQuery}`} className="text-red-900 flex items-center justify-center">
-                    <FiPlusCircle />
-                  </Link>
-                </td>
-              </tr>
-            ))}
+            {tableData
+              .filter((row) =>
+                row.subject_id.toString().toLowerCase().includes(searchQuery.trim().toLowerCase()) ||
+                row.subject_nameEN.toLowerCase().includes(searchQuery.trim().toLowerCase())||
+                row.subject_nameTH.toLowerCase().includes(searchQuery.trim().toLowerCase())
+              )
+              .map((row) => (
+                <tr key={row.subject_id}>
+                  <td className="border border-black p-2">{row.id}</td>
+                  <td className="border border-black p-2">{row.subject_id}-{row.school_year}</td>
+                  <td className="border border-black p-2">{row.subject_nameEN}</td>
+                  <td className="border border-black p-2">{row.subject_nameTH}</td>
+                  <td className="border border-black p-2">{row.credit}</td>
+                  <td className="border border-black p-2">
+                    <Link to={`/edit?subjectID=${row.subject_id}`} className="text-red-900 flex items-center justify-center">
+                      <FiPlusCircle />
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+
           </tbody>
         </table>
       </div>
