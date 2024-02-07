@@ -116,23 +116,23 @@ const Edit = () => {
     return (
     <div>
         <div className="bg-white h-screen flex justify-between items-center p-10">
-            <div className="bg-white p-12 ml-20 rounded-md text-xl  w-[1162px]">
-            <div className="bg-white"
-                style={{
-                    position: 'absolute',
-                    top: '50px',
-                    left: '350px',
-                    width: '384px',
-                    display: 'flex',
-                    flexDirection: 'column',
-                }}>
-            <h1 className="font-IBM font-bold text-black text-4xl mb-10">แก้ไขข้อมูล</h1>
-                <h1 className="font-IBM font-bold mb-4 text-black">รหัสวิชา</h1>
-                <form className="bg-rose-100 p-4 rounded-[15px] w-96 mb-6 flex items-center mr-10">
-                    <div className="flex font-IBM font-bold space-x-4">
-                        <p>ดึงข้อมูลรหัสวิชาจาก database</p>
-                    </div>
-                </form>
+            <div className="bg-white px-20 ml-20 rounded-md text-xl  w-[1162px]">
+                <div className="bg-blue px-20 "
+                    style={{
+                        position: 'absolute',
+                        top: '50px',
+                        left: '350px',
+                        width: '384px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}>
+                <h1 className="font-IBM font-bold text-black text-4xl mb-10">แก้ไขข้อมูล</h1>
+                    <h1 className="font-IBM font-bold mb-4 text-black">รหัสวิชา</h1>
+                    <form className="bg-rose-100 p-4 rounded-[15px] w-96 mb-6 flex items-center mr-10">
+                        <div className="flex font-IBM font-bold space-x-4">
+                            <p>ดึงข้อมูลรหัสวิชาจาก database</p>
+                        </div>
+                    </form>
 
                 <h1 className="font-IBM font-bold  text-black mb-2">ชื่อวิชา</h1>
                 <form className="bg-rose-100 p-4 rounded-[15px] w-96 mb-6 flex items-center mr-10">
@@ -210,7 +210,7 @@ const Edit = () => {
                 </div>
             </div>
 
-            <div className="bg-white p-10 rounded-md w-98 ml-20"
+            <div className="bg-white p-10 rounded-md w-98 ml-60 "
                 style={{
                     position: 'absolute',
                     top: '50px',

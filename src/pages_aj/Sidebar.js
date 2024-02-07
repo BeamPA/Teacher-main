@@ -5,7 +5,7 @@ import { BsChatLeftText } from 'react-icons/bs';
 
 const Menus = [
   { title: 'หน้าหลัก', link: '/', icon: <MdOutlineDashboard /> },
-  { title: 'ตารางสอน', icon: <BsChatLeftText />, link: '/home' },
+  { title: 'ตารางสอน', icon: <BsChatLeftText />, link: '/schedule' },
   { title: 'แบบฟอร์มข้อมูลรายวิชา', icon: <MdAccountCircle />, link: '/form' },
 ];
 
